@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - Program Studi Teknik Komputer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>Teknik Komputer</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="articles.html">Artikel</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Login Admin Artikel</h1>
+            <p>Masuk untuk mengelola artikel. Akses di-backend dengan session & role.</p>
+        </div>
+    </section>
+
+    <!-- Login Form -->
+    <section class="admin-section">
+        <div class="container">
+                <div class="contact-form-container admin-form" style="max-width:520px; margin:0 auto;">
+                <h2>Masuk</h2>
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="loginUser">Username</label>
+                        <input type="text" id="loginUser" name="loginUser" required placeholder="admin">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPass">Password</label>
+                        <input type="password" id="loginPass" name="loginPass" required placeholder="********">
+                    </div>
+                        <div id="loginStatus" class="admin-hint" style="display:none;"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Login</span>
+                            <span class="btn-loading" style="display:none;">Memproses...</span>
+                        </button>
+                    </div>
+                </form>
+                <div id="adminLoginMessage" class="form-message"></div>
+                <p class="admin-hint">Login diverifikasi di server; hanya pengguna dengan akun admin/root yang dapat masuk.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Program Studi Teknik Komputer</h3>
+                    <p>Mempersiapkan lulusan yang kompeten di bidang teknologi komputer dan siap menghadapi tantangan era digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="contact.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: info@utdi.ac.id</p>
+                    <p>Telepon: +62 274 486664</p>
+                    <p>Alamat: Jl. Raya Janti Jl. Majapahit No.143, Banguntapan, Bantul, DIY 55198</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Program Studi Teknik Komputer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

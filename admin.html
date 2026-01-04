@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Artikel - Program Studi Teknik Komputer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>Teknik Komputer</h1>
+                </div>
+                <div class="nav-right">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang</a></li>
+                        <li><a href="articles.html">Artikel</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                    <div class="admin-top-actions">
+                        <span id="adminUserLabel" class="admin-hint"></span>
+                        <button class="btn btn-secondary" id="logoutBtn" type="button">Logout</button>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Admin Artikel</h1>
+            <p>Form unggah artikel. Hanya admin/root.</p>
+        </div>
+    </section>
+
+    <!-- Admin Form -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="contact-form-container admin-form">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                    <h2 id="formTitle">Tambah Artikel</h2>
+                    <button type="button" class="btn btn-secondary" id="cancelEditBtn" style="display:none;">Batal Edit</button>
+                </div>
+                <form id="articleAdminForm">
+                    <input type="hidden" id="oldSlug" name="oldSlug" value="">
+                    <div class="form-group">
+                        <label for="title">Judul *</label>
+                        <input type="text" id="title" name="title" required placeholder="Judul artikel">
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug (opsional)</label>
+                        <input type="text" id="slug" name="slug" placeholder="kabar-prodi-terbaru">
+                        <small>Jika dikosongkan akan dibuat otomatis dari judul.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="summary">Ringkasan *</label>
+                        <textarea id="summary" name="summary" rows="3" required placeholder="Ringkasan pendek"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="hero">Gambar Hero (URL)</label>
+                        <input type="url" id="hero" name="hero" placeholder="https://.../hero.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Tag (pisahkan dengan koma)</label>
+                        <input type="text" id="tags" name="tags" placeholder="cloud, iot, keamanan">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Konten (HTML diperbolehkan)*</label>
+                        <textarea id="content" name="content" rows="12" required placeholder="Konten artikel"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Simpan Artikel</span>
+                            <span class="btn-loading" style="display:none;">Menyimpan...</span>
+                        </button>
+                    </div>
+                </form>
+                <div id="adminMessage" class="form-message"></div>
+                <p class="admin-hint">Pastikan hanya admin/root yang memiliki akses ke halaman ini.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles List (Admin) -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="contact-form-container admin-form">
+                <h2>Daftar Artikel</h2>
+                <div id="adminArticlesList" class="articles-grid"></div>
+                <div id="adminArticlesEmpty" class="empty-state" style="display:none;">
+                    <p>Belum ada artikel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Management (Root only) -->
+    <section class="admin-section" id="userMgmtSection" style="display:none;">
+        <div class="container">
+            <div class="contact-form-container admin-form">
+                <h2>Kelola Akun (Root)</h2>
+                <form id="userForm">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="userUsername">Username *</label>
+                            <input type="text" id="userUsername" name="userUsername" required placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPassword">Password *</label>
+                            <input type="password" id="userPassword" name="userPassword" required placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="userRole">Role *</label>
+                            <select id="userRole" name="userRole" required>
+                                <option value="admin">admin</option>
+                                <option value="root">root</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="align-self:end;">
+                            <button type="submit" class="btn btn-primary">Simpan User</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="userMessage" class="form-message"></div>
+
+                <h3 style="margin-top:1.5rem;">Daftar User</h3>
+                <div class="user-table-wrapper">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <tr><td colspan="3">Memuat...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Program Studi Teknik Komputer</h3>
+                    <p>Mempersiapkan lulusan yang kompeten di bidang teknologi komputer dan siap menghadapi tantangan era digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="contact.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: info@utdi.ac.id</p>
+                    <p>Telepon: +62 274 486664</p>
+                    <p>Alamat: Jl. Raya Janti Jl. Majapahit No.143, Banguntapan, Bantul, DIY 55198</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Program Studi Teknik Komputer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

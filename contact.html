@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Program Studi Teknik Komputer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>Teknik Komputer</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="articles.html">Artikel</a></li>
+                    <li><a href="contact.html" class="active">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Kontak & Lokasi</h1>
+            <p>Hubungi kami atau kunjungi kampus; detail kontak ada di bawah.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Kontak Utama</h2>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h3>Alamat</h3>
+                            <p>Jl. Raya Janti Jl. Majapahit No.143,<br>Banguntapan, Bantul, DIY 55198</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-text">
+                            <h3>Email</h3>
+                            <p>info@utdi.ac.id</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div class="info-text">
+                            <h3>Telepon</h3>
+                            <p>+62 274 486664</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Jumat: 08:00 - 16:00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🧭</div>
+                        <div class="info-text">
+                            <h3>Google Maps</h3>
+                            <p><a href="https://maps.app.goo.gl/XvZXMADLeoQEwmbX9" target="_blank" rel="noopener">Buka peta langsung</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Kirim Pesan Singkat</h2>
+                    <form id="contactForm" action="php/process_form.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nama *</label>
+                            <input type="text" id="name" name="name" required placeholder="Nama lengkap">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="email@domain.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">WhatsApp / Telepon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="08xx-xxxx-xxxx">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subjek *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Pilih subjek</option>
+                                <option value="informasi">Informasi Program Studi</option>
+                                <option value="pendaftaran">Pendaftaran Mahasiswa Baru</option>
+                                <option value="kerjasama">Kerjasama</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Pesan *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tulis pesan Anda"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-text">Kirim Pesan</span>
+                                <span class="btn-loading" style="display: none;">Mengirim...</span>
+                            </button>
+                        </div>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Optional) -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Lokasi Kami</h2>
+            <div class="map-embed">
+                <iframe
+                    src="https://www.google.com/maps?q=-7.792805,110.4083115&hl=id&z=17&output=embed"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+            <div class="map-cta">
+                <a href="https://maps.app.goo.gl/XvZXMADLeoQEwmbX9" target="_blank" rel="noopener">Buka di Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Program Studi Teknik Komputer</h3>
+                    <p>Mempersiapkan lulusan yang kompeten di bidang teknologi komputer dan siap menghadapi tantangan era digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="contact.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: info@utdi.ac.id</p>
+                    <p>Telepon: +62274486664</p>
+                    <p>Jl. Raya Janti Jl. Majapahit No.143, Jaranan, Banguntapan, Kec. Banguntapan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55198</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Program Studi Teknik Komputer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+# ⚡ LANGSUNG KE GITHUB - 5 MENIT!
+
+Instruksi singkat upload ke GitHub dalam waktu super cepat.
+
+---
+
+## 🎯 TUJUAN
+
+Dalam 5 menit, project Anda sudah ada di GitHub!
+
+---
+
+## ✅ SYARAT
+
+- [ ] Akun GitHub (buat di https://github.com jika belum)
+- [ ] Git installed (https://git-scm.com)
+
+---
+
+## 🚀 LANGSUNG EKSEKUSI
+
+### 1. Buka Terminal (3 detik)
+```
+Windows: Win+R → cmd atau powershell
+macOS: Command+Space → terminal  
+Linux: Ctrl+Alt+T
+```
+
+### 2. Masuk Folder Project (2 detik)
+```bash
+cd E:\XAMPP\htdocs\TugasProjek
+```
+
+### 3. Setup Git (10 detik)
+```bash
+git config --global user.name "Nama Anda"
+git config --global user.email "email@anda.com"
+```
+
+### 4. Init & Commit (20 detik)
+```bash
+git init
+git add .
+git commit -m "Initial commit: Website Program Studi Teknik Komputer"
+```
+
+### 5. Buat Repository GitHub (1 menit)
+1. Buka https://github.com/new
+2. Repository name: `TugasProjek`
+3. Klik "Create repository"
+
+### 6. Connect & Push (1 menit)
+Salin dari GitHub, paste di terminal:
+
+**HTTPS (Pilih ini jika lebih mudah):**
+```bash
+git remote add origin https://github.com/USERNAME/TugasProjek.git
+git branch -M main
+git push -u origin main
+```
+
+**Ganti USERNAME dengan username GitHub Anda!**
+
+### 7. Verifikasi (30 detik)
+Buka: https://github.com/USERNAME/TugasProjek
+
+Selesai! ✅
+
+---
+
+## ⏱️ WAKTU TOTAL: ~5 MENIT
+
+---
+
+## ❌ MASALAH?
+
+### "Permission denied"
+→ Gunakan HTTPS daripada SSH
+
+### "Authentication failed"
+→ Gunakan Personal Access Token (bukan password)
+
+### Bantuan detail?
+→ Baca: **QUICK_START_GITHUB.md** atau **GITHUB_UPLOAD_GUIDE.md**
+
+---
+
+## ✨ DONE!
+
+Repository Anda sekarang ada di GitHub! 🎉
+
+---
+
+Next: Share URL repository dengan orang lain! 🚀

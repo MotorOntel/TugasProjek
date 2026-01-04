@@ -148,3 +148,11 @@ __test__/
 !php/logs/.gitkeep
 !*.md
 !docs/
+
+# ===== Exclude These Instruction Files =====
+00_README_FIRST.md
+START_HERE.md
+QUICK_START_GITHUB.md
+GITHUB_UPLOAD_GUIDE.md
+UPLOAD_5_MINUTES.txt
+DOCUMENTATION_COMPLETE.md
